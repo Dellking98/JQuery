@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+      <style media="screen">
+        img{
+          width: 150px;
+          height:150px;
+          position: relative;
+          top: 50%;
+          left: 30%;
+        }
+
+        button{
+          background-color: blue;
+          width: 100px;
+          height: 65px;
+          position: relative;
+          bottom: 50%;
+          left: 43%;
+          color: white;
+        }
+      </style>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+      <script>
+        $(document).ready(function(){
+          $("img").click(function(){
+            $(this).hide("slow")
+          });
+
+          $("button").click(function(){
+            $("img").show("fast")
+          })
+
+
+        });
+
+      </script>
+
+
+  </head>
+  <body>
+    <div id="row1">
+      <img src="https://cdn.shopify.com/s/files/1/0950/0742/products/Cheetos_Cookie.png?v=1472804367" alt="Cheeto">
+      <img src="https://cdn.shopify.com/s/files/1/0950/0742/products/Cheetos_Cookie.png?v=1472804367" alt="Cheeto">
+      <img src="https://cdn.shopify.com/s/files/1/0950/0742/products/Cheetos_Cookie.png?v=1472804367" alt="Cheeto">
+
+    </div>
+
+    <div id="row2">
+      <img src="https://cdn.shopify.com/s/files/1/0950/0742/products/Cheetos_Cookie.png?v=1472804367" alt="Cheeto">
+      <img src="https://cdn.shopify.com/s/files/1/0950/0742/products/Cheetos_Cookie.png?v=1472804367" alt="Cheeto">
+      <img src="https://cdn.shopify.com/s/files/1/0950/0742/products/Cheetos_Cookie.png?v=1472804367" alt="Cheeto">
+
+    </div>
+
+    <div id="row3">
+      <img src="https://cdn.shopify.com/s/files/1/0950/0742/products/Cheetos_Cookie.png?v=1472804367" alt="Cheeto">
+      <img src="https://cdn.shopify.com/s/files/1/0950/0742/products/Cheetos_Cookie.png?v=1472804367" alt="Cheeto">
+      <img src="https://cdn.shopify.com/s/files/1/0950/0742/products/Cheetos_Cookie.png?v=1472804367" alt="Cheeto">
+
+    </div>
+
+    <button type="Reset" name="Reset">Reset</button>
+  </body>
+</html>
