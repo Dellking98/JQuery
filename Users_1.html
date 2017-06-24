@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      div > input{
+        display: block;
+      }
+
+    table{
+      width: 1000px;
+    }
+      tr > th{
+        border: 2px solid green;
+      }
+    </style>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('form').submit(function(){
+        return false;
+        var first1 = $('.first').val();
+        $('table > tr > td').html(first1);
+        console.log(first1);
+      });
+
+
+    });
+
+    </script>
+  </head>
+  <body>
+    <table>
+      <tr>
+      <th>Frist Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Contant #</th>
+    </tr>
+
+    <tr>
+      <td>Fisrt Name</td>
+      <td>Last Name</td>
+      <td>Email</td>
+      <td>Contant</td>
+    </tr>
+      </table>
+
+  <form class="" action="index.html" method="post">
+    <h1>Add User</h1><hr>
+      First Name: <input class='first' type="text" name="first_name" value="">
+      Last Name <input class='second' type="text" name="last_name" value="">
+      Email Address: <input class='third' type="email" name="email" value="">
+      Contact No: <input class='fourth' type="text" name="contact" value="">
+      <!-- <button type="submit" name="button">Chick me to Submit</button> -->
+      <input type="submit" name="submit" value="submit">
+  </form>
+
+
+
+
+
+  </body>
+</html>
