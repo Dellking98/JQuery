@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Put your info in</title>
+      <style media="screen">
+        form input, form textarea{
+          display: block;
+        }
+
+        .cards{
+          border: 2px solid black;
+          width: 500px;
+          height: 250px;
+          margin-left: 90px;
+        }
+
+        form, .cards{
+          display: inline-block;
+        }
+      </style>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript">
+
+        function userInFo(){
+          var fName = $('#fName').val();
+          var lName = $('#lName').val();
+          var whoAreYou = $('#whoAreYou').val();
+          $('.cards').append("<h1>"+fName+"</h1>"+"<h1>"+lName+"</h1>"+"<p>"+whoAreYou+"</p>");
+        }
+
+        function cards() {
+          $('submit').click(function(){
+            $('cards').append()
+          })
+        }
+
+      $(document).ready( function(){
+        $('form').submit(function(){
+          userInFo();
+          cards() ;
+          return false;
+
+
+      });
+
+});
+
+
+
+      </script>
+
+
+  </head>
+  <body>
+
+    <form class="" action="index.html" method="post">
+      First Name : <input id='fName' type="text" name="firstName" value="">
+      Last Name : <input id='lName' type="text" name="lastName" value="">
+
+      Description:
+      <textarea id='whoAreYou' name="name" rows="20" cols="90">
+
+      </textarea>
+
+      <input id='submit' type="submit" name="Submit" value="Add User">
+    </form>
+
+    <div class="cards">
+      <div class="front">
+        <p></p>
+      </div>
+
+    </div>
+
+
+
+  </body>
+</html>
