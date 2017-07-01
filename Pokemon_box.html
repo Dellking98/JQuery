@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      function pokemon() {
+      for (var i = 1; i < 152; i++){
+      var image = i;
+      var id = "";
+      id+=i;
+      $('#images').append( '<img id = '+ id +' src = "http://pokeapi.co/media/img/' + i + '.png " >');
+        };
+      };
+
+      // function pokemonId() {
+      //   var img = 'http://pokeapi.co/media/img/';
+      //   var img2 = "";
+      //   var end = ".png";
+      //   for(var x ; x < 152 ; x++){
+      //
+      //   img2 +=  '<img id = ' + x + ' src = "http://pokeapi.co/media/img/' + x + '.png " >'};
+      // }
+
+      function pokemonBox2() {
+        for (var i = 1; i < 152; i++){
+        $.get( "http://pokeapi.co/api/v1/pokemon/"  + i + "/" , function(res) {
+          var html_list="";
+          html_list+="<h1>" + res.name + "</h1>"
+          html_list+="<ul>"
+          for(var i = 0; i < res.abilities.length; i++){
+            html_list+="<li>" + res.abilities[i].name + "</li>"
+            html_list+="<li>" + res.egg_groups[i].name + "</li>"
+            html_list+="<li>" + res.types[i].name + "</li>"}
+        html_list+="</ul>"
+        $('#pokemonBox').html(html_list);}, "json");
+              };
+      };
+        //If I need to use it later
+      // function info() {
+      //   $.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
+      //     var html_list="";
+      //     html_list+="<h1>" + res.name + "</h1>"
+      //     html_list+="<ul>"
+      //     for(var i = 0; i < res.abilities.length; i++){
+      //       html_list+="<li>" + res.abilities[i].name + "</li>"
+      //       html_list+="<li>" + res.egg_groups[i].name + "</li>"
+      //       html_list+="<li>" + res.types[i].name + "</li>"}
+      //   html_list+="</ul>"
+      //   $('#pokemonBox').html(html_list);
+      //     }, "json");
+      //   }
+      $(document).ready(function(){
+        pokemon();
+
+      $('img').on(function() {
+        // some code will go here
+      });
+
+      $('#images').click(function(){
+        pokemon();
+        pokemonBox2();
+      });
+
+
+
+
+      });
+    </script>
+    <style media="screen">
+      #pokemonBox{
+        border: 4px solid red;
+        width: 400px;
+        height: 650px;
+        display: inline-block;
+        vertical-align: top;
+        }
+      #images{
+          width: 899px;
+          height: 200px;
+          display: inline-block;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="images">
+
+    </div>
+    <div id="pokemonBox">
+
+    </div>
+  </body>
+</html>
