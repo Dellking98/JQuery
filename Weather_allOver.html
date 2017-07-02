@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $('form').submit(function() {
+          // your code here (build up your url)
+
+          var statesName = $('#stateName').val();
+          $.get("http://api.openweathermap.org/data/2.5/weather?q="+ statesName + "&&appid=5fd14730bcf58401ddf10639f0d20dd2", function(res) {
+
+            console.log(res);
+            var temp = "<div>";
+            temp+="<h1>"+res.name+"</h1>";
+            temp+="<h2>Temperature<h2>"
+            temp+="<ul>"
+            temp+="<li>"+res.main.temp+"</li>"
+            // for (var i = 0; i < res.main.length; i++) {
+            //   temp+="<li>"+res.main[i].temp+"</li>"
+            // };
+            temp+="</ul>"
+            temp+="</div>"
+            $('#info').append(temp);
+            // $('#info').html(temp);
+          }, 'json');
+          // don't forget to return false so the page doesn't refresh
+          return false;
+      });
+
+
+  });
+
+  </script>
+  </head>
+  <body>
+    <form class="" action= method="post">
+      Search State: <input id=stateName type="text" name="weather" value="">
+    <input type="submit" name="weather" value="Search Weather">
+    </form>
+
+    <div id="info">
+
+    </div>
+  </body>
+</html>
+
+<!-- $.get("http://api.openweathermap.org/data/2.5/weather?q=philadelphia,uk&&appid=5fd14730bcf58401ddf10639f0d20dd2", function(res){ console.log(res.main.temp);}, 'json'); -->
